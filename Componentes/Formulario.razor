@@ -1,0 +1,32 @@
+﻿<EditForm Model="@usuario" OnSubmit="@LimpiarYActualizarFormulario">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="flex flex-col items-center">
+
+        <InputWithIcon IconClass="fas fa-user" Placeholder="Nombre" Value="@usuario.Nombre"/>
+
+        <InputWithIcon IconClass="fas fa-user" Placeholder="Apellidos" Value="@usuario.Apellidos" />
+
+        <InputWithIcon IconClass="fa fa-envelope" Placeholder="Correo" Value="@usuario.Correo" />
+
+        <InputWithIcon IconClass="fa-solid fa-phone" Placeholder="Telefono" Value="@usuario.Telefono" />
+
+        <InputWithIcon IconClass="fa-solid fa-eye" Placeholder="Observaciones" Value="@usuario.Observaciones" />
+
+        <div class="relative mb-2 flex items-center">
+            <select @bind="@selectionOption" class="w-64 h-12 rounded border py-2 pl-10 border-blue-gray-200">
+                <option value="" disabled></option>
+                <option value="aldan">Aldan</option>
+                <option value="clara">Clara</option>
+                <option value="cldrin">Aldrin</option>
+                <option value="mark">Mark</option>
+            </select>
+            <i class="fa-solid fa-user absolute left-4 mb-0 mt-auto"></i>
+        </div>
+        
+        <p>Acepto los Términos y Condiciones del servicio: </p><button class="@toggledButton"></button>
+
+        <button type="submit" class="bg-blue-500 text-white rounded p-2 mt-4" disabled> Enviar</button>
+    </div>
+</EditForm>
